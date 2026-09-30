@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #10182a;
+  --ink-muted: #17213a;
+  --paper: #f3f6fb;
+  --acid: #8bb8ff;
+  --coral: #8bb8ff;
+  --muted: #afbdd2;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--ink); color: var(--paper); font-family: Arial, sans-serif; }
+::selection { background: var(--acid); color: var(--ink); }
+
+.font-display { font-family: Arial, sans-serif; }
+.font-mono { font-family: "Courier New", monospace; }
+
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ticker-track { animation: ticker 28s linear infinite; }
+  .orb { animation: float 7s ease-in-out infinite; }
+}
+
+@keyframes ticker { to { transform: translateX(-31%); } }
+@keyframes float { 50% { transform: translateY(-12px) rotate(7deg); } }
